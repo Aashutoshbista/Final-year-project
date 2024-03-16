@@ -1,0 +1,106 @@
+ 
+                                  /* $otpquery="SELECT otp FROM verification where email='$email'";
+                                  $otpquery_run=mysqli_query($conn,$otpquery);
+                                  if (mysqli_num_rows($otpquery_run) > 0) {
+                                    
+                                    $row = mysqli_fetch_assoc($otpquery_run);
+                                    $otpFromDatabase = $row['otp'];
+                                    echo $otpFromDatabase;
+                                    echo $input;
+                                  }
+                                             */     
+                                                  
+                                                 
+                                                  
+                            
+
+
+
+                                
+                                 
+                             /* $query="SELECT otp FROM verification where email='$email'";
+                              $queryresult=mysqli_query($conn,$query);
+                                  if($input==$queryresult){
+                                    $query="INSERT INTO users(name,email,password,role_as,phone,age,country,tags) VALUES('$name','$email','$validpass','0','$phone','$age','$country','$tags')";
+        
+                                    if (mysqli_query($conn,$query)) {
+                                     
+                                        $_SESSION['status']="ACCOUNT CREATED SUCESSFULLY";
+                                        header("Location:signupdemo.php");
+                                    }else{
+                                        
+                                        $_SESSION['status']="Error While Creating Account";
+                                        header("Location:signupdemo.php");
+                                    }
+                                }
+
+                                  }
+                                  
+*/
+                               
+
+                                    /* $html="Your otp verification code is ".$otp;
+                                        $_SESSION['EMAIL']=$email;
+                                        $subject="OTP Verification";
+                                        */
+                                        /*mail sent*/
+                                        
+                               
+                                        /*
+                                        
+                                    $query="INSERT INTO users(name,email,password,role_as,phone,age,country,tags) VALUES('$name','$email','$validpass','0','$phone','$age','$country','$tags')";
+        
+                                    if (mysqli_query($conn,$query)) {
+                                     
+                                        $_SESSION['status']="ACCOUNT CREATED SUCESSFULLY";
+                                        header("Location:signupdemo.php");
+                                    }else{
+                                        
+                                        $_SESSION['status']="Error While Creating Account";
+                                        header("Location:signupdemo.php");
+                                    }
+                                }
+*/
+                          
+                         /* else{
+                                $_SESSION['status']="Error executing the program";
+                                header("Location:signupdemo.php");
+
+                            
+                    }*/
+               
+                  /* function smtp_mailer($email,$subject, $html){
+                   
+                    $mail = new PHPMailer(); 
+                    $mail->isSMTP(); 
+                    $mail->SMTPDebug = 0; 
+                    $mail->SMTPAuth = true; 
+                    $mail->SMTPSecure = 'tls'; 
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->Port = 587; 
+                    $mail->IsHTML(true);
+                    $mail->CharSet = 'UTF-8';
+                    $mail->Username = "bistaaashutosh@gmail.com";
+                    $mail->Password = "hkqjifcvxifvbwor";
+                    $mail->SetFrom("bistaaashutosh@gmail.com");
+                    $mail->Subject = $subject;
+                    $mail->Body =$html;
+                    $mail->AddAddress($email);
+                    if(!$mail->Send()){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+                   //message
+               
+            
+            }
+            if (smtp_mailer($email,$subject, $html )) {
+              echo 'OTP sent successfully!';
+          } else {
+              echo 'Failed to send OTP.';
+          }*/
+        
+  
+    

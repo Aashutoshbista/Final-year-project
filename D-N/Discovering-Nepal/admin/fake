@@ -1,0 +1,67 @@
+$new=$_POST['new_pass'];
+        $old=$_POST['old_pass'];
+        $id=$_SESSION['auth_user']['user_id'];
+        $querypass="SELECT password FROM users WHERE id=$id";
+        $querypass_run=mysqli_query($conn,$querypass);
+        $reult=mysqli_num_rows($querypass);
+        if($result>0){
+            if($querypass=$old){
+               
+            
+
+                if($querypass=$new){
+                    $_SESSION['status']="password cannot be the previous one";
+                    header("Location: change-password.php");
+
+                }
+                else{
+                    if($new=$old){
+                        $_SESSION['status']="password cannot be same as previous";
+                        header("Location:change-password.php");
+
+
+                    }
+                    else{
+                        $queryupdate="UPDATE  users SET  password='$new' WHERE id=$id";
+                        $query_run = mysqli_query($conn,$query);
+                        if($query_run)
+                        {
+                            $_SESSION['status']="password updated sucessfully";
+                            header("Location: change-password.php");
+                        }
+                        else{
+                            $_SESSION['status']="password update failed";
+                            header("Location: change-password.php");
+                        }
+    
+
+
+                    }
+
+                }
+            }
+            else{
+                $_SESSION['status']="password didnot match the old password ";
+                header("Location: change-password.php");
+            }
+
+        }
+        else{
+            $_SESSION['status']="fail to retrive data";
+            header("Location: change-password.php");
+
+        }
+
+       
+
+        }
+
+                }
+            
+
+            
+
+
+
+
+

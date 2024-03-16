@@ -1,0 +1,49 @@
+if(isset($_POST['addcatagory']))
+{
+    $name=$_POST['name'];
+    $Quantity=$_POST['quantity'];
+
+
+
+    $checkname="SELECT cat_name FROM catagories WHERE cat_name='$name'";
+    $checkname_run = mysqli_query($conn,$checkname);
+    if(mysqli_num_rows($checkname_run) >0){
+        //Already exist
+        
+        $_SESSION['status']="Catagorie name is alredy existed";
+        header("Location: category.php");
+
+
+    }
+    else{
+
+        $user_query="INSERT INTO catagories(name,products) VALUES ('$name','$Quantity')";
+    
+        $user_query_run = mysqli_query($conn,$user_query);
+    
+    
+        if($user_query_run){
+    
+            $_SESSION['status']="Catagorie Added sucessfully";
+            header("Location: category.php");
+        }
+        else
+        {
+            $_SESSION['status']="Catagorie added fail";
+            header("Location: catagorie.php");
+    
+    
+        }
+
+    }
+
+
+    
+
+
+
+
+
+
+}
+ <a href="category-edit.php?cat_id=<?php echo $row['cat_id'];  ?>" class="btn btn-info">Edit</a>
